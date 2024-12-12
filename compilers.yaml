@@ -19,19 +19,29 @@ compilers:
     - { image: clang, name: clang_assertions, args: assertions-trunk }
     - { image: clang, name: clang_autonsdmi, args: autonsdmi-trunk }
     - { image: clang, name: clang_bb_p2996, args: bb-p2996-trunk }
+    - { image: clang, name: clang_chrisbazley, args: chrisbazley-trunk }
     - { image: clang, name: clang_cppx, args: cppx-trunk }
     - { image: clang, name: clang_cppx_ext, args: cppx-ext-trunk }
     - { image: clang, name: clang_cppx_p2320, args: cppx-p2320-trunk }
+    - { image: clang, name: clang_dascandy_contracts, args: dascandy-contracts-trunk }
+    - { image: clang, name: clang_ericwf_contracts, args: ericwf-contracts-trunk }
+    - { image: clang, name: clang_ir, args: clangir-trunk }
     - { image: clang, name: clang_lifetime, args: lifetime-trunk }
     - { image: clang, name: clang_llvmflang, args: llvmflang-trunk }
     - { image: clang, name: clang_mizvekov_resugar, args: mizvekov-resugar }
     - { image: clang, name: clang_p1061, args: p1061-trunk }
+    - { image: clang, name: clang_p1974, args: p1974-trunk }
+    - { image: clang, name: clang_p2998, args: p2998-trunk }
+    - { image: clang, name: clang_p3068, args: p3068-trunk }
+    - { image: clang, name: clang_p3309, args: p3309-trunk }
+    - { image: clang, name: clang_p3367, args: p3367-trunk }
+    - { image: clang, name: clang_p3372, args: p3372-trunk }
+    - { image: clang, name: clang_p3412, args: p3412-trunk }
     - { image: clang, name: clang_parmexpr, command: build-parmexpr.sh }
     - { image: clang, name: clang_patmat, args: patmat-trunk }
     - { image: clang, name: clang_reflection, args: reflection-trunk }
-    - { image: clang, name: clang_variadic_friends, args: variadic-friends-trunk }
     - { image: clang, name: clang_relocatable, args: relocatable-trunk }
-    - { image: clang, name: clang_ir, args: clangir-trunk }
+    - { image: clang, name: clang_variadic_friends, args: variadic-friends-trunk }
     - { image: dotnet, name: dotnet, command: build.sh, args: trunk }
     - { image: clang, name: mlir_trunk, args: mlir-trunk }
     - { image: go, name: go }
@@ -58,17 +68,24 @@ compilers:
     - { image: gcc-cross, name: powerpc64le, args: "powerpc64le trunk" }
       # see https://github.com/compiler-explorer/clang-builder/issues/28
       #- { image: clang, name: clang_embed, args: embed-trunk }
-      # see https://github.com/compiler-explorer/clang-builder/issues/29
     - { image: clang, name: llvm_spirv, args: llvm-spirv }
-    - { image: clang, name: dang, args: dang-main }
+
+    # see https://github.com/compiler-explorer/compiler-explorer/issues/6836
+    # - { image: clang, name: dang, args: dang-main }
+
     - { image: clang, name: widberg, args: widberg-main }
     - { image: carbon, name: carbon }
     - { image: ispc, name: ispc }
-    - { image: ispc, name: ispc_templates_new, args: templates_new-trunk }
-    - { image: d8, name: d8 }
+
+    # See https://github.com/compiler-explorer/compiler-explorer/issues/6828
+    # - { image: ispc, name: ispc_templates_new, args: templates_new-trunk }
+
+    # See https://github.com/compiler-explorer/d8-builder/issues/2
+    # - { image: d8, name: d8 }
     - { image: hylo, name: hylo }
     - { image: vast, name: vast }
     - { image: mads, name: madpascal, args: trunk }
+    - { image: clang, name: circt_trunk, command: build-circt.sh, args: trunk}
 
   ad_hoc:
     - { image: gcc, command: build.sh }

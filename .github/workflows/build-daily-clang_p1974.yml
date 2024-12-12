@@ -1,5 +1,5 @@
 ### DO NOT EDIT - created by a script ###
-name: llvm_spirv via clang llvm-spirv
+name: clang_p1974 via clang p1974-trunk
 
 on:
   schedule:
@@ -17,8 +17,8 @@ jobs:
         uses: ./.github/actions/daily-build
         with:
           image: clang
-          name: llvm_spirv
+          name: clang_p1974
           command: build.sh
-          args: llvm-spirv
+          args: p1974-trunk
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
